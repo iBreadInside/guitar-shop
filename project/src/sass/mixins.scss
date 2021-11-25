@@ -1,0 +1,68 @@
+@import './variables.scss';
+
+@mixin wrapper {
+  width: $wrapper-width--relative;
+  margin: 0 auto;
+}
+
+@mixin list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin link {
+  color: $black--default;
+  text-decoration: none;
+}
+
+@mixin button {
+  font-family: $font--default;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  // color: $grey--background;
+  // background-color: $han-purple;
+}
+
+@mixin interactive {
+  cursor: pointer;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:focus {
+    outline-color: orange;
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: default;
+  }
+}
+
+// @mixin inputRange {
+//   -webkit-appearance: none;
+//   width: 100%;
+//   margin-top: 22px;
+//   height: 1px;
+//   background: $grey--line;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// @mixin rangeThumb {
+//   -webkit-appearance: none;
+//   height: 14px;
+//   width: 14px;
+//   border-radius: 50%;
+//   background: $han-purple;
+// }
+
+// @mixin rangeTrack {
+//   -webkit-appearance: none;
+//   box-shadow: none;
+//   border: none;
+//   background: transparent;
+// }

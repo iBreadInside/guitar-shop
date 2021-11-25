@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: $font--default;
+  font-size: $font-size--default;
+  line-height: $line-height--default;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height:100%;
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.hide-overflow {
+  overflow: hidden;
+}

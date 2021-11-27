@@ -1,0 +1,23 @@
+@import 'src/sass/mixins.scss';
+
+.list {
+  @include list-style-none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+  letter-spacing: 0.05em;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+.link {
+  @include link;
+  @include interactive;
+  display: block;
+  padding: 10px;
+}

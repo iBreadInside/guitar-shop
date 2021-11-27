@@ -1,5 +1,9 @@
+import Header from "../../header/header";
+
 export default function Catalog() {
   return(
-    <p>Catalog Page</p>
+    <div className='page'>
+      <Header />
+    </div>
   );
 }

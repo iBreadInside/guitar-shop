@@ -1,0 +1,55 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.sprite {
+  display: none;
+}
+
+.list {
+  @include list-style-none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  max-width: 138px;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 9px;
+  }
+
+  &:nth-child(1) .svg {
+    height: 17px;
+  }
+
+  &:nth-child(2) .svg {
+    height: 14px;
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.link_cart .svg {
+  width: 16px;
+  height: 18px;
+}
+
+.item_cart {
+  position: relative;
+}
+
+.output {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: $red--default;
+  font-size: 10px;
+  line-height: 12px;
+}

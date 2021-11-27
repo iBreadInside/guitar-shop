@@ -4,8 +4,8 @@
   font-style: normal;
   font-display: swap;
   src: local('Droid Sans'),
-    url('src/fonts/droid-sans-regular.woff2') format('woff2'),
-    url('src/fonts/droid-sans-regular.woff') format('woff');
+    url('../fonts/droid-sans-regular.woff2') format('woff2'),
+    url('../fonts/droid-sans-regular.woff') format('woff');
 }
 
 @font-face {
@@ -14,6 +14,6 @@
   font-style: normal;
   font-display: swap;
   src: local('Droid Sans'),
-    url('src/fonts/droid-sans-bold.woff2') format('woff2'),
-    url('src/fonts/droid-sans-bold.woff') format('woff');
+    url('../fonts/droid-sans-bold.woff2') format('woff2'),
+    url('../fonts/droid-sans-bold.woff') format('woff');
 }

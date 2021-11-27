@@ -52,6 +52,11 @@
     background-image: -webkit-image-set(url('../../img/image-header.webp'));
     background-repeat: no-repeat;
     background-position: 100%;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/image-header@2x.png');
+      background-image: -webkit-image-set(url('../../img/image-header@2x.webp'));
+    }
   }
 }
 

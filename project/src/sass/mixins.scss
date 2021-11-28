@@ -21,8 +21,13 @@
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
-  // color: $grey--background;
-  // background-color: $han-purple;
+}
+
+@mixin footer-title {
+  font-size: $font-size--default;
+  line-height: 44px;
+  opacity: 0.7;
+  margin: 0;
 }
 
 @mixin interactive {

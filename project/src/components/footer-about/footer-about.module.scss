@@ -1,0 +1,22 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.about {
+  max-width: 133px;
+  margin-right: 27px;
+}
+
+.title {
+  @include footer-title;
+  margin-bottom: 2px;
+}
+
+.text {
+  display: block;
+  margin: 0;
+  letter-spacing: normal;
+
+  &:first-of-type {
+    margin-bottom: 13px;
+  }
+}

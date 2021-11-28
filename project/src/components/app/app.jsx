@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import Catalog from '../pages/catalog/catalog';
+import NotFound from '../pages/not-found/not-found';
 
 export default function App() {
   return (
@@ -18,6 +19,9 @@ export default function App() {
         >
 
         </Route> */}
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

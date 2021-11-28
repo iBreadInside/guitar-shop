@@ -1,0 +1,36 @@
+@import 'src/sass/mixins.scss';
+
+.contacts {
+  max-width: 121px;
+  margin: 4px 19px 0 auto;
+}
+
+.title {
+  @include footer-title;
+}
+
+.address {
+  font-style: normal;
+}
+
+.schedule__block {
+  margin-top: 13px;
+}
+
+.schedule__title {
+  margin: 0;
+}
+
+.schedule__time {
+  margin: 0;
+}
+
+.tel {
+  @include link;
+  @include interactive;
+  color: inherit;
+}
+
+.svg {
+  margin-right: 5px;
+}

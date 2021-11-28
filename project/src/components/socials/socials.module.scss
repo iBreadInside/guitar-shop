@@ -1,0 +1,23 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.socials {
+  margin-top: auto;
+}
+
+.list {
+  @include list-style-none;
+  display: flex;
+}
+
+.item {
+  opacity: 0.65;
+
+  &:not(:last-child) {
+    margin-right: 23px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

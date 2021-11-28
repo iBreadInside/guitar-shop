@@ -11,7 +11,7 @@ const LinkName = {
 export default function NavIcons() {
   return(
     <>
-      <svg className={styles.sprite}>
+      <svg className='sprite'>
         {/* Map Icon */}
         <symbol id={LinkName.MAP} viewBox='0 0 14 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path d='M12.875 7.35227C12.875 11.8068 6.875 15.625 6.875 15.625C6.875 15.625 0.875 11.8068 0.875 7.35227C0.875 5.83331 1.50714 4.37655 2.63236 3.30248C3.75758 2.22841 5.2837 1.625 6.875 1.625C8.4663 1.625 9.99242 2.22841 11.1176 3.30248C12.2429 4.37655 12.875 5.83331 12.875 7.35227Z' stroke='black' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/>

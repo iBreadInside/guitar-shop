@@ -1,0 +1,22 @@
+@import 'src/sass/mixins.scss';
+
+.catalog {
+  max-width: 150px;
+  margin-right: 43px;
+}
+
+.title {
+  @include footer-title;
+}
+
+.list {
+  @include list-style-none;
+}
+
+.link {
+  @include link;
+  @include interactive;
+  display: block;
+  color: inherit;
+  line-height: 20px;
+}

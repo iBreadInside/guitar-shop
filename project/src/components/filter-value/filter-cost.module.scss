@@ -1,0 +1,40 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.cost {
+  @include fieldset-border-none;
+  margin-top: 30px;
+  padding: 24px 0 29px;
+  border-bottom: 0.7px solid $border--lightgrey;
+}
+
+.legend {
+  @include filter-legend;
+}
+
+.cost__inputs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-size--default;
+  line-height: 10px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 14px;
+    height: 0;
+    top: 45%;
+    left: 44%;
+    transform: translate(50%, 50%);
+    border-top: 1px solid rgba(#000000, .6);
+  }
+}
+
+.input {
+  @include input-border;
+  width: 40%;
+  height: 28px;
+  text-align: center;
+  text-decoration-color: rgba(black, 1);
+}

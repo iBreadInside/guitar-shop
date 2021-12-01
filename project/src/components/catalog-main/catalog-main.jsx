@@ -1,4 +1,5 @@
 import { Breadcrumb } from '../../const';
+import guitars from '../../mocks/guitars';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filter from '../filter/filter';
 import GuitarList from '../guitar-list/guitar-list';
@@ -16,7 +17,7 @@ export default function CatalogMain() {
         <Filter />
         <div>
           <Sorting />
-          <GuitarList />
+          <GuitarList list={guitars} />
         </div>
       </section>
     </main>

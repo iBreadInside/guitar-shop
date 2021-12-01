@@ -1,0 +1,94 @@
+@import 'src/sass/mixins.scss';
+
+.sorting {
+  display: flex;
+  font-size: 16px;
+  letter-spacing: .05em;
+  padding-top: 16px;
+  margin-left: 5px;
+}
+
+.title {
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 26px;
+}
+
+.list {
+  @include list-style-none;
+  display: flex;
+  height: min-content;
+
+  &_method > .item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  &_direction {
+    justify-content: space-between;
+    min-width: 54px;
+    margin-right: 11px;
+  }
+}
+
+.item {
+  height: min-content;
+
+  &_dir {
+    position: relative;
+
+    &:nth-child(2) {
+      transform: rotate(180deg);
+    }
+
+    &:nth-child(1) .label_dir::before {
+      top: 0;
+    }
+
+    &:nth-child(2) .label_dir::before {
+      bottom: 0;
+    }
+  }
+}
+
+.method {
+  &:not(:checked) + .label {
+    opacity: .6;
+  }
+
+  &:focus + .label {
+    outline: 1px solid orange;
+  }
+}
+
+.direction {
+  &:not(:checked) + .label {
+    opacity: .4;
+  }
+
+  &:focus + .label {
+    outline: 1px solid orange;
+  }
+}
+
+.label {
+  cursor: pointer;
+}
+
+.label_dir {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+
+  &::before {
+    position: absolute;
+    content: '\25B2';
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}

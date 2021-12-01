@@ -1,6 +1,7 @@
 import { Breadcrumb } from '../../const';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filter from '../filter/filter';
+import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
 
 const CATALOG_BREADCRUMBS = Object.entries(Breadcrumb).slice(0, -1);
@@ -12,6 +13,7 @@ export default function CatalogMain() {
       <Breadcrumbs list={CATALOG_BREADCRUMBS} />
       <section className={styles.catalog}>
         <Filter />
+        <Sorting />
       </section>
     </main>
   );

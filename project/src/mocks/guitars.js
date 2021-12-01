@@ -5,7 +5,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 15,
   strings: 7,
-  value: 17500,
+  price: 17500,
 },{
   id: 2,
   vendorCode: 'TK129049',
@@ -13,7 +13,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 9,
   strings: 7,
-  value: 29500,
+  price: 29500,
 },{
   id: 3,
   vendorCode: 'RO111111',
@@ -21,7 +21,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 21,
   strings: 4,
-  value: 6800,
+  price: 6800,
 },{
   id: 4,
   vendorCode: 'TK436457',
@@ -29,7 +29,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 15,
   strings: 6,
-  value: 30000,
+  price: 30000,
 },{
   id: 5,
   vendorCode: 'DI192138',
@@ -37,7 +37,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 5,
   strings: 7,
-  value: 3500,
+  price: 3500,
 },{
   id: 6,
   vendorCode: 'SO934345',
@@ -45,7 +45,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 17,
   strings: 6,
-  value: 15300,
+  price: 15300,
 },{
   id: 7,
   vendorCode: 'DI082347',
@@ -53,7 +53,7 @@ const guitars =[{
   type: 'Erektkt',
   reviews: 5,
   strings: 4,
-  value: 2200,
+  price: 2200,
 },{
   id: 8,
   vendorCode: 'SO757575',
@@ -61,7 +61,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 15,
   strings: 4,
-  value: 30000,
+  price: 30000,
 },{
   id: 9,
   vendorCode: 'VO154751',
@@ -69,7 +69,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 3,
   strings: 7,
-  value: 1600,
+  price: 1600,
 },{
   id: 10,
   vendorCode: 'TK244556',
@@ -77,7 +77,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 20,
   strings: 4,
-  value: 23000,
+  price: 23000,
 },{
   id: 11,
   vendorCode: 'TK134663',
@@ -85,7 +85,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 19,
   strings: 4,
-  value: 18700,
+  price: 18700,
 },{
   id: 12,
   vendorCode: 'SO123212',
@@ -93,7 +93,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 30,
   strings: 7,
-  value: 35000,
+  price: 35000,
 },{
   id: 13,
   vendorCode: 'SO757575',
@@ -101,7 +101,7 @@ const guitars =[{
   type: 'Электрогитара',
   reviews: 28,
   strings: 6,
-  value: 14900,
+  price: 14900,
 },{
   id: 14,
   vendorCode: 'VO519510',
@@ -109,7 +109,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 7,
   strings: 6,
-  value: 7600,
+  price: 7600,
 },{
   id: 15,
   vendorCode: 'VO457369',
@@ -117,7 +117,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 19,
   strings: 6,
-  value: 6500,
+  price: 6500,
 },{
   id: 16,
   vendorCode: 'FB625903',
@@ -125,7 +125,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 26,
   strings: 7,
-  value: 12000,
+  price: 12000,
 },{
   id: 17,
   vendorCode: 'FB576948',
@@ -133,7 +133,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 31,
   strings: 7,
-  value: 9900,
+  price: 9900,
 },{
   id: 18,
   vendorCode: 'LU012032',
@@ -141,7 +141,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 28,
   strings: 23,
-  value: 8900,
+  price: 8900,
 },{
   id: 19,
   vendorCode: 'LU546853',
@@ -149,7 +149,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 34,
   strings: 12,
-  value: 10500,
+  price: 10500,
 },{
   id: 20,
   vendorCode: 'LU458283',
@@ -157,7 +157,7 @@ const guitars =[{
   type: 'Акустическая гитара',
   reviews: 9,
   strings: 6,
-  value: 13300,
+  price: 13300,
 },{
   id: 21,
   vendorCode: 'RO324341',
@@ -165,7 +165,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 37,
   strings: 4,
-  value: 4800,
+  price: 4800,
 },{
   id: 22,
   vendorCode: 'RO214235',
@@ -173,7 +173,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 5,
   strings: 4,
-  value: 1900,
+  price: 1900,
 },{
   id: 23,
   vendorCode: 'DI132414',
@@ -181,7 +181,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 23,
   strings: 4,
-  value: 2500,
+  price: 2500,
 },{
   id: 24,
   vendorCode: 'DI934754',
@@ -189,7 +189,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 3,
   strings: 4,
-  value: 3800,
+  price: 3800,
 },{
   id: 25,
   vendorCode: 'DI034292',
@@ -197,7 +197,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 10,
   strings: 4,
-  value: 4100,
+  price: 4100,
 },{
   id: 26,
   vendorCode: 'SO757575',
@@ -205,7 +205,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 14,
   strings: 4,
-  value: 2700,
+  price: 2700,
 },{
   id: 27,
   vendorCode: 'VO043244',
@@ -213,7 +213,7 @@ const guitars =[{
   type: 'Укулеле',
   reviews: 29,
   strings: 4,
-  value: 6700,
+  price: 6700,
 }];
 
 export default guitars;

@@ -1,6 +1,7 @@
 import { Breadcrumb } from '../../const';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filter from '../filter/filter';
+import GuitarList from '../guitar-list/guitar-list';
 import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
 
@@ -13,7 +14,10 @@ export default function CatalogMain() {
       <Breadcrumbs list={CATALOG_BREADCRUMBS} />
       <section className={styles.catalog}>
         <Filter />
-        <Sorting />
+        <div>
+          <Sorting />
+          <GuitarList />
+        </div>
       </section>
     </main>
   );

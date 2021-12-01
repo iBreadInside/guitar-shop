@@ -4,9 +4,9 @@ const STRING_NUMBER = [4, 6, 7, 12];
 
 export default function FilterStrings() {
   return(
-    <fieldset>
-      <legend>Количество струн</legend>
-      <ul>
+    <fieldset className={styles.strings}>
+      <legend className={styles.legend}>Количество струн</legend>
+      <ul className={styles.list}>
         {
           STRING_NUMBER.map(number => (
             <li

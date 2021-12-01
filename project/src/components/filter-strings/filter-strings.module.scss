@@ -1,0 +1,25 @@
+@import 'src/sass/mixins.scss';
+
+.strings {
+  @include fieldset-border-none;
+}
+
+.legend {
+  @include filter-legend;
+}
+
+.list {
+  @include list-style-none;
+}
+
+.item {
+  @include filter-item;
+}
+
+.check {
+  @include filter-checkbox;
+}
+
+.label {
+  @include filter-label;
+}

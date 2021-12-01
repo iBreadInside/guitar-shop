@@ -1,10 +1,7 @@
 @import 'src/sass/mixins.scss';
-// @import 'src/sass/variables.scss';
 
 .type {
   @include fieldset-border-none;
-  margin-top: 30px;
-  // padding: 24px 0 29px;
 }
 
 .legend {
@@ -16,33 +13,13 @@
 }
 
 .item {
-  display: flex;
-  align-items: center;
-
-  &:not(:last-child) {
-    margin-bottom: 12px;
-  }
+  @include filter-item;
 }
 
 .check {
-  @include interactive;
-  @include input-border;
-  width: 24px;
-  height: 24px;
-  margin-right: 16px;
-
-  &:checked {
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    background-image: url('../../img/svg/check.svg');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
+  @include filter-checkbox;
 }
 
 .label {
-  @include interactive;
-  font-size: 16px;
-  line-height: 19px;
+  @include filter-label;
 }

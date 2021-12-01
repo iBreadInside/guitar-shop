@@ -15,7 +15,7 @@ export default function FilterStrings() {
             >
               <input
                 type='checkbox'
-                className={styles.check}
+                className={`visually-hidden ${styles.check}`}
                 id={number}
                 name='string-number'
               />

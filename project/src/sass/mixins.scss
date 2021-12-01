@@ -28,37 +28,49 @@
 }
 
 @mixin filter-item {
+  position: relative;
   display: flex;
   align-items: center;
 
   &:not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 }
 
 @mixin filter-checkbox {
   @include interactive;
-  @include input-border;
   width: 24px;
   height: 24px;
   margin-right: 16px;
+}
 
-  &:checked {
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    background-image: url('../img/svg/check.svg');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    box-shadow: none;
-  }
+@mixin filter-checkbox-checked {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 24px;
+  top: 5px;
+  left: 5px;
+  background-image: url('../img/svg/check.svg');
+  background-repeat: no-repeat;
 }
 
 @mixin filter-label {
   @include interactive;
+  margin-top: 3px;
   font-size: 16px;
   line-height: 19px;
+  padding-left: 40px;
+
+  &::before {
+    @include input-border;
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+  }
 }
 
 @mixin link {

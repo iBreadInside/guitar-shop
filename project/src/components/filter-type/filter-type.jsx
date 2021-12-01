@@ -13,7 +13,7 @@ export default function FilterType({type}) {
             >
               <input
                 type='checkbox'
-                className={styles.check}
+                className={`visually-hidden ${styles.check}`}
                 id={type.name}
                 name='guitar-type'
               />

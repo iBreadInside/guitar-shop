@@ -1,0 +1,33 @@
+@import 'src/sass/mixins.scss';
+
+.type {
+  @include fieldset-border-none;
+}
+
+.legend {
+  @include filter-legend;
+}
+
+.list {
+  @include list-style-none;
+}
+
+.item {
+  @include filter-item;
+
+  &:focus-within .label::before {
+    outline: 1px solid orange;
+  }
+}
+
+.check {
+  @include filter-checkbox;
+
+  &:checked + .label::after {
+    @include filter-checkbox-checked;
+  }
+}
+
+.label {
+  @include filter-label;
+}

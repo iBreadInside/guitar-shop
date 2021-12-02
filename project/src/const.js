@@ -1,4 +1,5 @@
 export const AppRoute = {
+  MAIN: '/',
   CATALOG: '/',
   LOCATION: '/location',
   ABOUT: '/about',
@@ -6,4 +7,10 @@ export const AppRoute = {
   MAP: '/map',
   SEARCH: '/search',
   CART: '/cart',
+};
+
+export const Breadcrumb = {
+  MAIN: 'Главная',
+  CATALOG: 'Каталог',
+  CART: 'Оформляем',
 };

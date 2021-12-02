@@ -1,0 +1,19 @@
+@import 'src/sass/mixins.scss';
+
+.main {
+  @include wrapper;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: 22% 75%;
+  column-gap: 3%;
+  margin-top: 34px;
+}

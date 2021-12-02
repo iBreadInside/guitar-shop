@@ -1,0 +1,11 @@
+@import 'src/sass/mixins.scss';
+
+.main {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.message {
+  margin: 0 auto;
+}

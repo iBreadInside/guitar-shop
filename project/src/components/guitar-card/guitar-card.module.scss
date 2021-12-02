@@ -1,0 +1,77 @@
+@import 'src/sass/variables.scss';
+@import 'src/sass/mixins.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 14px 20px;
+  border: 1px solid $border--lightgrey;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.empty > svg,
+.full > svg {
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+}
+
+.reviews {
+  font-family: $font--secondary;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: $border--grey;
+  margin-left: 4px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.name,
+.price {
+  margin: 0;
+  line-height: 15px;
+  letter-spacing: .05em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 13px;
+}
+
+.btn {
+  @include interactive;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: .02em;
+  color: white;
+  background-color: $btn--silver;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 10px;
+
+  & > svg {
+    margin-right: 5px;
+  }
+
+  &_buy {
+    padding-right: 15px;
+    background-color: $btn--orange;
+  }
+}

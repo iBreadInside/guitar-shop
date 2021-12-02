@@ -1,4 +1,3 @@
-import guitars from '../../mocks/guitars';
 import GuitarCard from '../guitar-card/guitar-card';
 import styles from './guitar-list.module.scss';
 

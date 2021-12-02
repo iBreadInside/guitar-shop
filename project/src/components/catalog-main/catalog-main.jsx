@@ -3,6 +3,7 @@ import guitars from '../../mocks/guitars';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filter from '../filter/filter';
 import GuitarList from '../guitar-list/guitar-list';
+import GuitarPagination from '../guitar-pagination/guitar-pagination';
 import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
 
@@ -18,6 +19,7 @@ export default function CatalogMain() {
         <div>
           <Sorting />
           <GuitarList list={guitars} />
+          <GuitarPagination totalPages={7} />
         </div>
       </section>
     </main>

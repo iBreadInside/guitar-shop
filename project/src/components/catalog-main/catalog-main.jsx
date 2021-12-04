@@ -7,13 +7,15 @@ import GuitarList from '../guitar-list/guitar-list';
 import GuitarPagination from '../guitar-pagination/guitar-pagination';
 import Modal from '../modal/modal';
 import PopupAdd from '../popups/popup-add/popup-add';
+import PopupSuccess from '../popups/popup-success/popup-success';
 import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
 
 const CATALOG_BREADCRUMBS = Object.entries(Breadcrumb).slice(0, -1);
 
 export default function CatalogMain() {
-  const [isModalShown, setIsModalShown] = useState(true);
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [isModalSuccess, setIsModalSuccess] = useState(false);
 
   return(
     <main className={styles.main}>
@@ -28,11 +30,13 @@ export default function CatalogMain() {
         </div>
       </section>
 
-      {isModalShown &&
-        <Modal modalState={isModalShown}>
-          <PopupAdd />
-        </Modal>
-      }
+      <Modal modalState={isModalShown}>
+        <PopupAdd />
+      </Modal>
+
+      <Modal modalState={isModalSuccess}>
+        <PopupSuccess />
+      </Modal>
 
     </main>
   );

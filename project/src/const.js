@@ -14,3 +14,9 @@ export const Breadcrumb = {
   CATALOG: 'Каталог',
   CART: 'Оформляем',
 };
+
+export const PopupType = {
+  ADD: `popup-add`,
+  DELETE: `popup-delete`,
+  SUCCESS: `popup-success`
+}

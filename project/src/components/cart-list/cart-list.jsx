@@ -1,24 +1,9 @@
 import { Link } from 'react-router-dom';
+import guitars from '../../mocks/guitars';
 import CartCard from '../cart-card/cart-card';
 import styles from './cart-list.module.scss';
 
-const cartList = [{
-  id: 1,
-  vendorCode: 'SO757575',
-  name: 'Честер Bass',
-  type: 'Электрогитара',
-  reviews: 15,
-  strings: 7,
-  price: 17500,
-},{
-  id: 2,
-  vendorCode: 'TK129049',
-  name: 'СURT Z300',
-  type: 'Электрогитара',
-  reviews: 9,
-  strings: 7,
-  price: 29500,
-}];
+const cartList = guitars.slice(0, 2);
 
 export default function CartList() {
   return(

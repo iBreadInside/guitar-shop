@@ -1,0 +1,52 @@
+@import 'src/sass/mixins.scss';
+
+@keyframes appear {
+  0% {
+    transform: translate(-2000px, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+
+  background-color: rgba(black, .4);
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 740px;
+  padding: 30px 50px;
+
+  animation: appear 0.5s;
+
+  text-align: center;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.open {
+  overflow: hidden;
+}
+
+.close {
+  @include interactive;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}

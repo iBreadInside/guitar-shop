@@ -1,12 +1,12 @@
 import styles from './cart-card.module.scss';
-import acousticPng from '../../img/guitars/acoustic.png';
-import acousticPngRetina from '../../img/guitars/acoustic@2x.png';
-import acousticWebp from '../../img/guitars/acoustic.webp';
-import acousticWebpRetina from '../../img/guitars/acoustic@2x.webp';
 import { useState } from 'react';
 
 export default function CartCard({item}) {
   const {
+    img,
+    imgRetina,
+    webp,
+    webpRetina,
     name,
     type,
     vendorCode,
@@ -31,14 +31,14 @@ export default function CartCard({item}) {
         type='button'
         aria-label='Удалить товар из корзины'
       >
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.77 14.835L9.00004 10.0575L4.23004 14.835L3.16504 13.77L7.94254 9.00004L3.16504 4.23004L4.23004 3.16504L9.00004 7.94254L13.77 3.17254L14.8275 4.23004L10.0575 9.00004L14.8275 13.77L13.77 14.835Z" fill="#9F9E9E"/>
+        <svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M13.77 14.835L9.00004 10.0575L4.23004 14.835L3.16504 13.77L7.94254 9.00004L3.16504 4.23004L4.23004 3.16504L9.00004 7.94254L13.77 3.17254L14.8275 4.23004L10.0575 9.00004L14.8275 13.77L13.77 14.835Z' fill='#9F9E9E'/>
         </svg>
       </button>
 
       <picture>
-        <source type='image/webp' srcSet={`${acousticWebp} 1x, ${acousticWebpRetina} 2x`} />
-        <img width='48' height='124' src={acousticPng} srcSet={`${acousticPngRetina} 2x`} alt={name} />
+        <source type='image/webp' srcSet={`${webp} 1x, ${webpRetina} 2x`} />
+        <img width='48' height='124' src={img} srcSet={`${imgRetina} 2x`} alt={name} />
       </picture>
 
       <section className={styles.info}>
@@ -59,7 +59,7 @@ export default function CartCard({item}) {
           -
         </button>
         <label
-          htmlFor="amount"
+          htmlFor='amount'
           className={`visually-hidden`}
         >
           количества товара

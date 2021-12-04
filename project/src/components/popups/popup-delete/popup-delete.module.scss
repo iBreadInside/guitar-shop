@@ -1,0 +1,57 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.popup {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  align-self: flex-start;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: .02em;
+}
+
+.picture {
+  width: 56px;
+  height: 128px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.control {
+  width: 220px;
+  margin-left: auto;
+}
+
+.btn {
+  @include interactive;
+  width: 100%;
+  margin: 20px 0 0 auto;
+  padding: 15px 0;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  border: none;
+  border-radius: 2px;
+
+  &_delete {
+    color: white;
+    background-color: $btn--orange;
+  }
+
+  &_continue {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 16px;
+  }
+}

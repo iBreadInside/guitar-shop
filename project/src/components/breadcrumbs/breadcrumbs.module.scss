@@ -34,4 +34,10 @@
   &:not(.link_active) {
     @include interactive;
   }
+
+  &_active {
+    &:focus {
+      outline: none;
+    }
+  }
 }

@@ -11,11 +11,15 @@ export default function GuitarPagination({totalPages}) {
       setCurrentPage(0);
   }, [totalPages]);
 
+  const handlePageClick = (event) => {
+    setCurrentPage(event.selected);
+  };
+
   return(
     totalPages !== undefined &&
       <ReactPaginate
         pageCount={totalPages}
-        pageRangeDisplayed={1}
+        pageRangeDisplayed={(currentPage === totalPages - 1 ) ? 2 : 1}
         marginPagesDisplayed={1}
         previousLabel='Назад'
         breakLabel='...'
@@ -30,7 +34,8 @@ export default function GuitarPagination({totalPages}) {
         previousLinkClassName={`${styles.page__link} ${styles.page__link_prev}`}
         nextLinkClassName={`${styles.page__link} ${styles.page__link_next}`}
         disabledClassName={'visually-hidden'}
-        renderOnZeroPageCount={''}
+        renderOnZeroPageCount={null}
+        onPageChange={handlePageClick}
       />
   );
 }

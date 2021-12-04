@@ -1,9 +1,10 @@
 import styles from './breadcrumbs.module.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import PropTypes, { arrayOf } from 'prop-types';
 
 export default function Breadcrumbs({list}) {
+  const location = useLocation();
 
   return(
     <nav className={styles.breadcrumbs}>
@@ -17,7 +18,9 @@ export default function Breadcrumbs({list}) {
               <NavLink
                 to={AppRoute[item]}
                 className={styles.link}
-                activeClassName={`${styles.link} ${styles.link_active}`}
+                exact
+                activeClassName={styles.link_active}
+                tabIndex={location.pathname !== AppRoute[item] ? 0 : -1}
               >
                 {text}
               </NavLink>

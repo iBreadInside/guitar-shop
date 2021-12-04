@@ -1,0 +1,93 @@
+@import 'src/sass/mixins.scss';
+
+.card {
+  display: grid;
+  grid-template-columns: 4.8% 12% auto 20% repeat(2, 15%);
+  padding: 20px 0 13px;
+  // width: 100%;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 0.7px solid $border--lightgrey;
+  }
+}
+
+.delete {
+  @include interactive;
+  background-color: transparent;
+  border: none;
+  align-self: flex-start;
+  padding: 1px;
+}
+
+.info {
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.name,
+.code,
+.details {
+  margin: 0;
+  letter-spacing: .05em;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  margin-bottom: 12px;
+}
+
+.code {
+  line-height: 15px;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  text-align: center;
+}
+
+.sum {
+  justify-self: flex-end;
+}
+
+.amount__block {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.amount {
+  display: block;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  color: $border--grey;
+  border: 1px solid $border--grey;
+  width: 28px;
+  height: 30px;
+  text-align: center;
+}
+
+.btn {
+  @include interactive;
+  width: 28px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $border--grey;
+  line-height: normal;
+  background-color: white;
+
+  &_add {
+    border-left: none;
+  }
+
+  &_remove {
+    border-right: none;
+  }
+}

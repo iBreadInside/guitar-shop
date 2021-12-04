@@ -2,18 +2,12 @@
 
 .main {
   @include wrapper;
-  margin-bottom: 138px;
+  margin-bottom: 171px;
 }
 
 .title {
   font-size: 22px;
   line-height: 26px;
+  margin-top: 39px;
   margin-bottom: 20px;
-}
-
-.catalog {
-  display: grid;
-  grid-template-columns: 22% 75%;
-  column-gap: 3%;
-  margin-top: 34px;
 }

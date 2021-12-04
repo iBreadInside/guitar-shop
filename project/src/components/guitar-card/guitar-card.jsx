@@ -28,7 +28,7 @@ export default function GuitarCard({guitar}) {
     <li className={styles.card}>
       <picture>
         <source type='image/webp' srcSet={`${acousticWebp} 1x, ${acousticWebpRetina} 2x`} />
-        <img src={acousticPng} srcSet={`${acousticPngRetina} 2x'`} alt={guitar.name} />
+        <img src={acousticPng} srcSet={`${acousticPngRetina} 2x`} alt={guitar.name} />
       </picture>
 
       <section className={styles.rating}>

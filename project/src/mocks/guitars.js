@@ -1,3 +1,16 @@
+import acousticImg from '../img/guitars/acoustic.png';
+import acousticImgRetina from '../img/guitars/acoustic@2x.png';
+import acousticWebp from '../img/guitars/acoustic.webp';
+import acousticWebpRetina from '../img/guitars/acoustic@2x.webp';
+import electricImg from '../img/guitars/electric.png';
+import electricImgRetina from '../img/guitars/electric@2x.png';
+import electricWebp from '../img/guitars/electric.webp';
+import electricWebpRetina from '../img/guitars/electric@2x.webp';
+import ukuleleImg from '../img/guitars/ukulele.png';
+import ukuleleImgRetina from '../img/guitars/ukulele@2x.png';
+import ukuleleWebp from '../img/guitars/ukulele.webp';
+import ukuleleWebpRetina from '../img/guitars/ukulele@2x.webp';
+
 const guitars =[{
   id: 1,
   vendorCode: 'SO757575',
@@ -6,6 +19,10 @@ const guitars =[{
   reviews: 15,
   strings: 7,
   price: 17500,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 2,
   vendorCode: 'TK129049',
@@ -14,6 +31,10 @@ const guitars =[{
   reviews: 9,
   strings: 7,
   price: 29500,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 3,
   vendorCode: 'RO111111',
@@ -22,6 +43,10 @@ const guitars =[{
   reviews: 21,
   strings: 4,
   price: 6800,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 4,
   vendorCode: 'TK436457',
@@ -30,6 +55,10 @@ const guitars =[{
   reviews: 15,
   strings: 6,
   price: 30000,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 5,
   vendorCode: 'DI192138',
@@ -38,6 +67,10 @@ const guitars =[{
   reviews: 5,
   strings: 7,
   price: 3500,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 6,
   vendorCode: 'SO934345',
@@ -46,14 +79,22 @@ const guitars =[{
   reviews: 17,
   strings: 6,
   price: 15300,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 7,
   vendorCode: 'DI082347',
   name: 'Dania VX',
-  type: 'Erektkt',
+  type: 'Укулеле',
   reviews: 5,
   strings: 4,
   price: 2200,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 8,
   vendorCode: 'SO757575',
@@ -62,6 +103,10 @@ const guitars =[{
   reviews: 15,
   strings: 4,
   price: 30000,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 9,
   vendorCode: 'VO154751',
@@ -70,6 +115,10 @@ const guitars =[{
   reviews: 3,
   strings: 7,
   price: 1600,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 10,
   vendorCode: 'TK244556',
@@ -78,6 +127,10 @@ const guitars =[{
   reviews: 20,
   strings: 4,
   price: 23000,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 11,
   vendorCode: 'TK134663',
@@ -86,6 +139,10 @@ const guitars =[{
   reviews: 19,
   strings: 4,
   price: 18700,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 12,
   vendorCode: 'SO123212',
@@ -94,6 +151,10 @@ const guitars =[{
   reviews: 30,
   strings: 7,
   price: 35000,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 13,
   vendorCode: 'SO757575',
@@ -102,6 +163,10 @@ const guitars =[{
   reviews: 28,
   strings: 6,
   price: 14900,
+  img: electricImg,
+  imgRetina: electricImgRetina,
+  webp: electricWebp,
+  webpRetina: electricWebpRetina,
 },{
   id: 14,
   vendorCode: 'VO519510',
@@ -110,6 +175,10 @@ const guitars =[{
   reviews: 7,
   strings: 6,
   price: 7600,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 15,
   vendorCode: 'VO457369',
@@ -118,6 +187,10 @@ const guitars =[{
   reviews: 19,
   strings: 6,
   price: 6500,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 16,
   vendorCode: 'FB625903',
@@ -126,6 +199,10 @@ const guitars =[{
   reviews: 26,
   strings: 7,
   price: 12000,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 17,
   vendorCode: 'FB576948',
@@ -134,6 +211,10 @@ const guitars =[{
   reviews: 31,
   strings: 7,
   price: 9900,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 18,
   vendorCode: 'LU012032',
@@ -142,6 +223,10 @@ const guitars =[{
   reviews: 28,
   strings: 23,
   price: 8900,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 19,
   vendorCode: 'LU546853',
@@ -150,6 +235,10 @@ const guitars =[{
   reviews: 34,
   strings: 12,
   price: 10500,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 20,
   vendorCode: 'LU458283',
@@ -158,6 +247,10 @@ const guitars =[{
   reviews: 9,
   strings: 6,
   price: 13300,
+  img: acousticImg,
+  imgRetina: acousticImgRetina,
+  webp: acousticWebp,
+  webpRetina: acousticWebpRetina,
 },{
   id: 21,
   vendorCode: 'RO324341',
@@ -166,6 +259,10 @@ const guitars =[{
   reviews: 37,
   strings: 4,
   price: 4800,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 22,
   vendorCode: 'RO214235',
@@ -174,6 +271,10 @@ const guitars =[{
   reviews: 5,
   strings: 4,
   price: 1900,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 23,
   vendorCode: 'DI132414',
@@ -182,6 +283,10 @@ const guitars =[{
   reviews: 23,
   strings: 4,
   price: 2500,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 24,
   vendorCode: 'DI934754',
@@ -190,6 +295,10 @@ const guitars =[{
   reviews: 3,
   strings: 4,
   price: 3800,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 25,
   vendorCode: 'DI034292',
@@ -198,6 +307,10 @@ const guitars =[{
   reviews: 10,
   strings: 4,
   price: 4100,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 26,
   vendorCode: 'SO757575',
@@ -206,6 +319,10 @@ const guitars =[{
   reviews: 14,
   strings: 4,
   price: 2700,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 },{
   id: 27,
   vendorCode: 'VO043244',
@@ -214,6 +331,10 @@ const guitars =[{
   reviews: 29,
   strings: 4,
   price: 6700,
+  img: ukuleleImg,
+  imgRetina: ukuleleImgRetina,
+  webp: ukuleleWebp,
+  webpRetina: ukuleleWebpRetina,
 }];
 
 export default guitars;

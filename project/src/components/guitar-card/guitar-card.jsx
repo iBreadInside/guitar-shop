@@ -1,8 +1,4 @@
 import styles from './guitar-card.module.scss';
-import acousticPng from '../../img/guitars/acoustic.png';
-import acousticPngRetina from '../../img/guitars/acoustic@2x.png';
-import acousticWebp from '../../img/guitars/acoustic.webp';
-import acousticWebpRetina from '../../img/guitars/acoustic@2x.webp';
 import { Rating } from 'react-simple-star-rating';
 
 const RATING = 3.5;
@@ -24,11 +20,21 @@ const renderFullStar = () => {
 };
 
 export default function GuitarCard({guitar}) {
+  const {
+    img,
+    imgRetina,
+    webp,
+    webpRetina,
+    name,
+    reviews,
+    price,
+  } = guitar;
+
   return(
     <li className={styles.card}>
       <picture>
-        <source type='image/webp' srcSet={`${acousticWebp} 1x, ${acousticWebpRetina} 2x`} />
-        <img src={acousticPng} srcSet={`${acousticPngRetina} 2x`} alt={guitar.name} />
+        <source type='image/webp' srcSet={`${webp} 1x, ${webpRetina} 2x`} />
+        <img src={img} srcSet={`${imgRetina} 2x`} alt={name} />
       </picture>
 
       <section className={styles.rating}>
@@ -41,12 +47,12 @@ export default function GuitarCard({guitar}) {
           emptyIcon={renderEmptyStar()}
           fullIcon={renderFullStar()}
         />
-        <span className={styles.reviews}>{guitar.reviews}</span>
+        <span className={styles.reviews}>{reviews}</span>
       </section>
 
       <section className={styles.info}>
-        <p className={styles.name}>{guitar.name}</p>
-        <p className={styles.price}>{guitar.price} &#8381;</p>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.price}>{price} &#8381;</p>
       </section>
 
       <section className={styles.buttons}>

@@ -1,0 +1,47 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.text {
+  align-self: flex-start;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: .02em;
+}
+
+.picture {
+  width: 56px;
+  height: 128px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.info {
+  margin: 20px 0 0 0;
+}
+
+.btn {
+  @include interactive;
+  margin: 20px 0 0 auto;
+  padding: 15px 22px;
+  // width: 220px;
+  // height: 46px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  border: none;
+  color: white;
+  background-color: $btn--orange;
+}

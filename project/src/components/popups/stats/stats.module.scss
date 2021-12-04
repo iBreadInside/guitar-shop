@@ -1,0 +1,43 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 40px;
+}
+
+.name {
+  margin: 0 0 14px 0;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.name > span {
+  margin-left: 5px;
+  letter-spacing: .05em;
+}
+
+.code {
+  margin: 0 0 7px 0;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: .05em;
+}
+
+.price {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: .05em;
+}
+
+.strings {
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}

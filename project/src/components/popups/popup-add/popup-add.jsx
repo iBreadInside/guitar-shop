@@ -27,9 +27,7 @@ export default function PopupAdd() {
           <source type='image/webp' srcSet={`${currentItem.webp} 1x, ${currentItem.webpRetina} 2x`} />
           <img className={styles.picture} src={currentItem.img} srcSet={`${currentItem.imgRetina} 2x`} alt={currentItem.name} />
         </picture>
-        <div className={styles.info}>
-          <Stats guitar={currentItem} />
-        </div>
+        <Stats guitar={currentItem} />
         <button
           className={styles.btn}
           // onClick={_handleAddClick}

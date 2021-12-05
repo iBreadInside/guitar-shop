@@ -73,8 +73,6 @@ export default function GuitarCard({guitar}) {
           Купить
         </button>
       </section>
-
-
     </li>
   );
 }

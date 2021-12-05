@@ -20,3 +20,22 @@ export const PopupType = {
   DELETE: `popup-delete`,
   SUCCESS: `popup-success`
 }
+
+// export const GuitarType = {
+//   UKULELE: 'Укулеле',
+//   ACOUSTIC: 'Акустическая гитара',
+//   ELECTRIC: 'Электрогитара',
+//   ALL: 'Все гитары'
+// }
+
+// export const SortType = {
+//   DEFAULT: `none`,
+//   BY_PRICE: `byPrice`,
+//   BY_RATING: `byRating`
+// }
+
+// export const SortDirection = {
+//   DEFAULT: `none`,
+//   INC: `increase`,
+//   DEC: `decrease`
+// }

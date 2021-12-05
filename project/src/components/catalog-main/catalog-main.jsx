@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from '../../const';
 import guitars from '../../mocks/guitars';
+import { getGuitarList } from '../../store/guitars/selectors';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filter from '../filter/filter';
 import GuitarList from '../guitar-list/guitar-list';
@@ -12,8 +14,15 @@ import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
 
 const CATALOG_BREADCRUMBS = Object.entries(Breadcrumb).slice(0, -1);
+const GUITARS_PER_PAGE = 9;
 
 export default function CatalogMain() {
+  const dispatch = useDispatch();
+  const fullGuitarList = useSelector(getGuitarList);
+  const memorizedGuitarList = useMemo(() => fullGuitarList, [fullGuitarList]);
+
+  const paginationPagesCount = Math.ceil(memorizedGuitarList.length / GUITARS_PER_PAGE);
+
   const [isModalShown, setIsModalShown] = useState(false);
   const [isModalSuccess, setIsModalSuccess] = useState(false);
 
@@ -25,8 +34,11 @@ export default function CatalogMain() {
         <Filter />
         <div>
           <Sorting />
-          <GuitarList list={guitars} />
-          <GuitarPagination totalPages={7} />
+          <GuitarList list={memorizedGuitarList} />
+          {
+            paginationPagesCount > 1 &&
+              <GuitarPagination totalPages={paginationPagesCount + 5} />
+          }
         </div>
       </section>
 

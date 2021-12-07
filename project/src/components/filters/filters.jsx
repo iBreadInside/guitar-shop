@@ -4,7 +4,6 @@ import { getFilters, getGuitars } from '../../store/selectors';
 import { setFilterValue } from '../../store/actions';
 import { getMaxPrice, getMinPrice } from '../../utils';
 import { FilterType, guitarMap, GuitarType, numberKeys, stringsMap } from '../../const';
-import './filters.scss';
 import styles from './filters.module.scss';
 
 export default function Filters() {

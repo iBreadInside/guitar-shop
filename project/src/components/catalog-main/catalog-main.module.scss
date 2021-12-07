@@ -17,3 +17,63 @@
   column-gap: 3%;
   margin-top: 34px;
 }
+
+.container {
+  @include list-style-none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.break,
+.page__link {
+  @include input-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: .05em;
+  padding: 2px 8px;
+
+  &_active {
+    color: white;
+    background-color: $background--footer;
+  }
+
+  &_prev,
+  &_next {
+    padding: 2px 21px;
+  }
+
+  &_prev {
+    margin-right: 10px;
+  }
+}
+
+.break {
+  position: relative;
+  font-family: $font--secondary;
+  font-weight: 500;
+  width: 24px;
+  margin-right: 10px;
+  cursor: default;
+
+  &::before {
+    position: absolute;
+    content: '...';
+    width: min-content;
+    height: min-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+}
+
+.page__link {
+  @include interactive;
+}

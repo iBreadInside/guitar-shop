@@ -42,7 +42,7 @@ export default function GuitarPagination({totalPages}) {
       activeLinkClassName={styles.page__link_active}
       previousLinkClassName={`${styles.page__link} ${styles.page__link_prev}`}
       nextLinkClassName={`${styles.page__link} ${styles.page__link_next}`}
-      disabledClassName={'visually-hidden'}
+      disabledClassName='visually-hidden'
       renderOnZeroPageCount={null}
       onPageChange={handlePageChange}
     />

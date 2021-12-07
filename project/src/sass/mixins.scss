@@ -23,7 +23,7 @@
 }
 
 @mixin input-border {
-  border: 0.7px solid $border--grey;
+  border: .7px solid $border--grey;
   border-radius: 2px;
 }
 
@@ -88,7 +88,7 @@
 @mixin footer-title {
   font-size: $font-size--default;
   line-height: 44px;
-  opacity: 0.7;
+  opacity: .7;
   margin: 0;
 }
 

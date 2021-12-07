@@ -40,16 +40,29 @@ export const SortType = {
   BY_RATING: 'byRating',
 };
 
+export const SortTypes = [
+  {
+    id: 1,
+    type: SortType.BY_PRICE,
+    text: `по цене`
+  },
+  {
+    id: 2,
+    type: SortType.BY_RATING,
+    text: `по популярности`
+  },
+];
+
 export const SortDirection = {
   DEFAULT: 'none',
-  INC: 'increase',
-  DEC: 'decrease'
+  INC: 'по возрастанию',
+  DEC: 'по убыванию',
 };
 
 export const sortMap = {
   [SortType.BY_PRICE]: 'price',
   [SortType.BY_RATING]: 'rating',
-}
+};
 
 export const StringAmount = {
   FOUR: '4',

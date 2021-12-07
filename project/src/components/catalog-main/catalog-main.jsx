@@ -6,7 +6,6 @@ import ReactPaginate from 'react-paginate';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filters from '../filters/filters';
 import GuitarList from '../guitar-list/guitar-list';
-// import GuitarPagination from '../guitar-pagination/guitar-pagination';
 import Modal from '../modal/modal';
 import PopupAdd from '../popups/popup-add/popup-add';
 import PopupSuccess from '../popups/popup-success/popup-success';

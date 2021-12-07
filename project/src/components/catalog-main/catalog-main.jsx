@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from '../../const';
 import { getAddPopupOpen, getSuccessPopupOpen, selectSortedItems } from '../../store/selectors';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
-import Filter from '../filter/filter';
 import Filters from '../filters/filters';
 import GuitarList from '../guitar-list/guitar-list';
 import GuitarPagination from '../guitar-pagination/guitar-pagination';
@@ -28,7 +27,6 @@ export default function CatalogMain() {
       <h1 className={styles.title}>Каталог гитар</h1>
       <Breadcrumbs list={CATALOG_BREADCRUMBS} />
       <section className={styles.catalog}>
-        {/* <Filter /> */}
         <Filters />
         <div>
           <Sorting />

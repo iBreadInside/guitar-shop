@@ -1,0 +1,82 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.title {
+  @include filter-legend;
+  display: block;
+  margin-bottom: 0;
+  padding-bottom: 29px;
+  border-bottom: 0.7px solid $border--lightgrey;
+}
+
+.fieldset {
+  @include fieldset-border-none;
+}
+
+.legend {
+  @include filter-legend;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-size--default;
+  line-height: 10px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 14px;
+    height: 0;
+    top: 45%;
+    left: 44%;
+    transform: translate(50%, 50%);
+    border-top: 1px solid rgba(black, .6);
+  }
+}
+
+.input {
+  @include input-border;
+  width: 40%;
+  height: 28px;
+  text-align: center;
+  text-decoration-color: rgba(black, 1);
+}
+
+.list {
+  @include list-style-none;
+}
+
+.item {
+  @include filter-item;
+
+  &:focus-within .label::before {
+    outline: 1px solid orange;
+  }
+}
+
+.check {
+  @include filter-checkbox;
+
+  &:checked + .label::after {
+    @include filter-checkbox-checked;
+  }
+
+  &:disabled + .label {
+    cursor: default;
+
+    &::before {
+      border-color: $border--lightgrey;
+      background-color: $check--disabled;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.label {
+  @include filter-label;
+}

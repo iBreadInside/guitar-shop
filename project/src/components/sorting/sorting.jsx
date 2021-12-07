@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import styles from './sorting.module.scss';
 
 const SortingMethod = {
@@ -12,11 +12,11 @@ const SortingDirection = {
 };
 
 export default function Sorting() {
-  const [direction, setDirection] = useState(SortingDirection.UP);
+  // const [direction, setDirection] = useState(SortingDirection.UP);
 
-  const handleDirectionChange = (value) => {
-    setDirection(value);
-  };
+  // const handleDirectionChange = (value) => {
+  //   setDirection(value);
+  // };
 
   return(
     <section className={styles.sorting}>
@@ -60,8 +60,8 @@ export default function Sorting() {
                   id={dir}
                   name='dir'
                   value={dir}
-                  onChange={evt => handleDirectionChange(evt.target.value)}
-                  defaultChecked={direction === dir}
+                  // onChange={evt => handleDirectionChange(evt.target.value)}
+                  // defaultChecked={direction === dir}
               />
               <label
                 className={`${styles.label} ${styles.label_dir}`}

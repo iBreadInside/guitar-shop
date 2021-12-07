@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from '../../const';
-import guitars from '../../mocks/guitars';
-import { getGuitarList } from '../../store/guitars/selectors';
+import { getAddPopupOpen, getSuccessPopupOpen, selectSortedItems } from '../../store/selectors';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filter from '../filter/filter';
+import Filters from '../filters/filters';
 import GuitarList from '../guitar-list/guitar-list';
 import GuitarPagination from '../guitar-pagination/guitar-pagination';
 import Modal from '../modal/modal';
@@ -18,35 +18,33 @@ const GUITARS_PER_PAGE = 9;
 
 export default function CatalogMain() {
   const dispatch = useDispatch();
-  const fullGuitarList = useSelector(getGuitarList);
-  const memorizedGuitarList = useMemo(() => fullGuitarList, [fullGuitarList]);
-
-  const paginationPagesCount = Math.ceil(memorizedGuitarList.length / GUITARS_PER_PAGE);
-
-  const [isModalShown, setIsModalShown] = useState(false);
-  const [isModalSuccess, setIsModalSuccess] = useState(false);
+  const guitars = useSelector(selectSortedItems);
+  const paginationPagesCount = Math.ceil(guitars.length / GUITARS_PER_PAGE);
+  const isAddPopupOpen = useSelector(getAddPopupOpen);
+  const isSuccessPopupOpen = useSelector(getSuccessPopupOpen);
 
   return(
     <main className={styles.main}>
       <h1 className={styles.title}>Каталог гитар</h1>
       <Breadcrumbs list={CATALOG_BREADCRUMBS} />
       <section className={styles.catalog}>
-        <Filter />
+        {/* <Filter /> */}
+        <Filters />
         <div>
           <Sorting />
-          <GuitarList list={memorizedGuitarList} />
+          <GuitarList list={guitars} />
           {
             paginationPagesCount > 1 &&
-              <GuitarPagination totalPages={paginationPagesCount + 5} />
+              <GuitarPagination totalPages={paginationPagesCount} />
           }
         </div>
       </section>
 
-      <Modal modalState={isModalShown}>
+      <Modal modalState={isAddPopupOpen}>
         <PopupAdd />
       </Modal>
 
-      <Modal modalState={isModalSuccess}>
+      <Modal modalState={isSuccessPopupOpen}>
         <PopupSuccess />
       </Modal>
 

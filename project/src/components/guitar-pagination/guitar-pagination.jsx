@@ -2,28 +2,33 @@ import styles from './guitar-pagination.module.scss';
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setPagination } from '../../store/actions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setPagination } from '../../store/actions';
 // import { getPaginationPage } from '../../store/guitars/selectors';
 
 export default function GuitarPagination({totalPages}) {
-  const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(0);
+  // const dispatch = useDispatch();
   // const currentPage = useSelector(getPaginationPage);
 
-  useEffect(() => {
-    dispatch(setPagination(0));
-  }, [totalPages, dispatch]);
+  // useEffect(() => {
+  //   dispatch(setPagination(0));
+  // }, [totalPages, dispatch]);
 
-  const handlePageClick = (event) => {
-    dispatch(setPagination(event.selected));
+  const handlePageChange = (event) => {
+    // dispatch(setPagination(event.selected));
     setCurrentPage(event.selected);
   };
+
+  const [currentPage, setCurrentPage] = useState(null);
+
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [totalPages]);
 
   return(
     <ReactPaginate
       pageCount={totalPages}
-      pageRangeDisplayed={(currentPage === totalPages - 1) ? 2 : 1}
+      pageRangeDisplayed={currentPage === totalPages - 1 ? 2 : 1}
       marginPagesDisplayed={1}
       previousLabel='Назад'
       breakLabel='...'
@@ -39,7 +44,7 @@ export default function GuitarPagination({totalPages}) {
       nextLinkClassName={`${styles.page__link} ${styles.page__link_next}`}
       disabledClassName={'visually-hidden'}
       renderOnZeroPageCount={null}
-      onPageChange={handlePageClick}
+      onPageChange={handlePageChange}
     />
   );
 }

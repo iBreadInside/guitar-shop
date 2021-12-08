@@ -1,27 +1,21 @@
 import styles from './modal.module.scss';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 
-const handleAfterOpen = () => {
-  document.body.classList.add(styles.open);
-};
-
-const handleAfterClose = () => {
-  document.body.classList.remove(styles.open);
-};
-
-export default function Modal({modalState, ...props}) {
-
+export default function Modal({modalState, onAfterOpen, onRequestClose, ...props}) {
   return(
     <ReactModal
       isOpen={modalState}
       overlayClassName={styles.modal}
       className={styles.container}
-      onAfterOpen={handleAfterOpen}
-      onAfterClose={handleAfterClose}
+      onAfterOpen={onAfterOpen}
+      onAfterClose={onRequestClose}
+      onRequestClose={onRequestClose}
+      ariaHideApp={false}
     >
       <button
         className={styles.close}
-        // onClick={_handleCloseClick}
+        onClick={onRequestClose}
         aria-label='Закрыть окно'
       >
         <svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -32,3 +26,9 @@ export default function Modal({modalState, ...props}) {
     </ReactModal>
   );
 }
+
+Modal.propTypes = {
+  modalState: PropTypes.bool.isRequired,
+  onAfterOpen: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
+};

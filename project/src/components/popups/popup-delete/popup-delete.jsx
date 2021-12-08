@@ -1,25 +1,22 @@
 import styles from './popup-delete.module.scss';
-// import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Stats from '../stats/stats';
-import guitars from '../../../mocks/guitars';
-// import {getCurrentItem} from '../../../store/selectors';
-// import {deleteCartItem, setPopupOpen} from '../../../store/action';
-// import {PopupType} from '../../../const';
+import { deleteCartItem, setPopupOpen } from '../../../store/actions';
+import { PopupType } from '../../../const';
+import { getCurrentItem } from '../../../store/cart/selectors';
 
 export default function PopupDelete() {
-  // const currentItem = useSelector(getCurrentItem)
-  // const dispatch = useDispatch();
+  const currentItem = useSelector(getCurrentItem);
+  const dispatch = useDispatch();
 
-  // const _handleDeleteClick = (item) => {
-  //   dispatch(deleteCartItem(item, true));
-  //   dispatch(setPopupOpen(PopupType.DELETE, false));
-  // }
+  const handleDeleteClick = (item) => {
+    dispatch(deleteCartItem(item, true));
+    dispatch(setPopupOpen(PopupType.DELETE, false));
+  };
 
-  // const _handleCloseClick = () => {
-  //   dispatch(setPopupOpen(PopupType.DELETE, false));
-  // }
-
-  const currentItem = guitars[0];
+  const handleCloseClick = () => {
+    dispatch(setPopupOpen(PopupType.DELETE, false));
+  };
 
   return (
     <section className={styles.popup}>
@@ -35,13 +32,13 @@ export default function PopupDelete() {
         <div className={styles.control}>
           <button
             className={`${styles.btn} ${styles.btn_delete}`}
-            // onClick={ () => _handleDeleteClick(currentItem)}
+            onClick={ () => handleDeleteClick(currentItem)}
           >
             Удалить товар
           </button>
           <button
             className={`${styles.btn} ${styles.btn_continue}`}
-            // onClick={_handleCloseClick}
+            onClick={handleCloseClick}
           >
             Продолжить покупки
           </button>

@@ -21,6 +21,7 @@
   min-height: 100vh;
   height:100%;
   width: 100%;
+  min-width: $desktop-width;
 }
 
 .visually-hidden {

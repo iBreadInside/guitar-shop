@@ -1,40 +1,13 @@
 import { createAction } from '@reduxjs/toolkit';
 
-// export const ActionType = {
-//   GET_GUITARS: 'catalog/getGuitars',
-//   SET_PAGINATION: 'catalog/setPagination',
-//   GET_CURRENT_LIST: 'catalog/getCurrentList',
-// };
-
-// export const getGuitars = createAction(
-//   ActionType.GET_GUITARS,
-//   guitars => ({
-//     payload: guitars,
-//   }),
-// );
-
-// export const setPagination = createAction(
-//   ActionType.SET_PAGINATION,
-//   page => ({
-//     payload: page,
-//   }),
-// );
-
-// export const getCurrentList = createAction(
-//   ActionType.GET_CURRENT_LIST,
-//   list => ({
-//     payload: list,
-//   }),
-// );
-
 export const ActionType = {
-  SET_FILTER_VALUE: `data/setFilterValue`,
-  SET_SORT_TYPE: `data/setSortType`,
-  SET_SORT_DIRECTION: `data/setSortDirection`,
-  ADD_CART_ITEM: `data/addCartItem`,
-  DELETE_CART_ITEM: `data/deleteCartItem`,
-  SET_CURRENT_ITEM: `data/setCurrentItem`,
-  SET_POPUP_OPEN: `app/setPopupOpen`
+  SET_FILTER_VALUE: `catalog/setFilterValue`,
+  SET_SORT_TYPE: `catalog/setSortType`,
+  SET_SORT_DIRECTION: `catalog/setSortDirection`,
+  ADD_CART_ITEM: `cart/addCartItem`,
+  DELETE_CART_ITEM: `cart/deleteCartItem`,
+  SET_CURRENT_ITEM: `cart/setCurrentItem`,
+  SET_POPUP_OPEN: `modals/setPopupOpen`
 }
 
 export const setFilterValue = createAction(

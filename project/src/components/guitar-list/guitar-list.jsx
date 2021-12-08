@@ -1,5 +1,7 @@
 import GuitarCard from '../guitar-card/guitar-card';
 import styles from './guitar-list.module.scss';
+import PropTypes from 'prop-types';
+import guitarCardProp from '../guitar-card/guitar-card.prop';
 
 const GUITARS_PER_PAGE = 9;
 
@@ -16,3 +18,7 @@ export default function GuitarList({list}) {
     </ul>
   );
 }
+
+GuitarList.propTypes = {
+  list: PropTypes.arrayOf(guitarCardProp),
+};

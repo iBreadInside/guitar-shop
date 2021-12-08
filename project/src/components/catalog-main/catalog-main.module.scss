@@ -77,3 +77,7 @@
 .page__link {
   @include interactive;
 }
+
+.open {
+  overflow: hidden;
+}

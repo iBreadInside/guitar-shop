@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilters, getGuitars } from '../../store/selectors';
 import { setFilterValue } from '../../store/actions';
 import { getMaxPrice, getMinPrice } from '../../utils';
 import { FilterType, guitarMap, GuitarType, numberKeys, stringsMap } from '../../const';
 import styles from './filters.module.scss';
+import { getFilters, getGuitars } from '../../store/catalog/selectors';
 
 export default function Filters() {
   const dispatch = useDispatch();
@@ -57,7 +57,6 @@ export default function Filters() {
 
   const handleMinBlur = (evt) => {
     let {value} = evt.target;
-
     value = Number(value.replace(/\s/g, ``));
 
     let currentMin = null;
@@ -71,15 +70,18 @@ export default function Filters() {
 
     setMinPrice(currentMin);
     dispatch(setFilterValue(FilterType.PRICE, `min`, currentMin));
-    if (currentMin > Number(maxPrice)) {
-      dispatch(setFilterValue(FilterType.PRICE, `max`, currentMin));
-      setMaxPrice(currentMin);
+
+    if (maxPrice === 0 && maxPrice !== max) {
+      setMaxPrice(max);
+      dispatch(setFilterValue(FilterType.PRICE, 'max', max));
+    } else if (currentMin > Number(maxPrice)) {
+      dispatch(setFilterValue(FilterType.PRICE, `min`, maxPrice));
+      setMinPrice(maxPrice);
     };
   };
 
   const handleMaxBlur = (evt) => {
     let {value} = evt.target;
-
     value = Number(value.replace(/\s/g, ``));
 
     let currentMax = null;
@@ -95,8 +97,8 @@ export default function Filters() {
     dispatch(setFilterValue(FilterType.PRICE, `max`, currentMax));
 
     if (currentMax < Number(minPrice)) {
-      dispatch(setFilterValue(FilterType.PRICE, `min`, currentMax));
-      setMinPrice(currentMax);
+      dispatch(setFilterValue(FilterType.PRICE, `max`, minPrice));
+      setMaxPrice(minPrice);
     } else if (minPrice === 0 && minPrice !== min) {
       setMinPrice(min);
       dispatch(setFilterValue(FilterType.PRICE, `min`, min));

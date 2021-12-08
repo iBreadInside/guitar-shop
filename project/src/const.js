@@ -61,7 +61,7 @@ export const SortDirection = {
 
 export const sortMap = {
   [SortType.BY_PRICE]: 'price',
-  [SortType.BY_RATING]: 'rating',
+  [SortType.BY_RATING]: 'reviews',
 };
 
 export const StringAmount = {
@@ -85,3 +85,17 @@ export const FilterType = {
 };
 
 export const numberKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+export const PromoCode = {
+  GITARAHIT: 'GITARAHIT',
+  SUPERGITARA: 'SUPERGITARA',
+  GITARA2020: 'GITARA2020'
+};
+
+export const PromoCodesMap = {
+  GITARAHIT: 0.1,
+  SUPERGITARA: 700,
+  GITARA2020: 3000
+};
+
+export const MAX_SALE = 0.3;

@@ -1,4 +1,4 @@
-import { GuitarType, StringAmount } from "../const";
+import { GuitarType, StringAmount } from '../const';
 
 export const Filters = {
   strings: [

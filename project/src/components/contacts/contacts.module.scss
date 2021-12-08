@@ -3,6 +3,11 @@
 .contacts {
   max-width: 121px;
   margin: 4px 19px 0 auto;
+
+  @-moz-document url-prefix() {
+    max-width: 128px;
+    margin: 4px 10px 0 auto;
+  }
 }
 
 .title {

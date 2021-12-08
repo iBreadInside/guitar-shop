@@ -1,6 +1,6 @@
 import styles from './footer-about.module.scss';
 
-const ABOUT_ONE = 'Магазин гитар, музыкальных инструментов и гитарная мастерская в Санкт-Петербурге.';
+const ABOUT_ONE = 'Магазин гитар, музыкальных\u00A0инструментов и гитарная мастерская в Санкт-Петербурге.';
 const ABOUT_TWO = 'Все инструменты проверены, отстроены и доведены до идеала!';
 
 export default function FooterAbout() {

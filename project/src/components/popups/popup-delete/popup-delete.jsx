@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Stats from '../stats/stats';
 import { deleteCartItem, setPopupOpen } from '../../../store/actions';
 import { PopupType } from '../../../const';
-import { getCurrentItem } from '../../../store/selectors';
+import { getCurrentItem } from '../../../store/cart/selectors';
 
 export default function PopupDelete() {
   const currentItem = useSelector(getCurrentItem);

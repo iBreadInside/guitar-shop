@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb, PopupType } from '../../const';
-import { getAddPopupOpen, getSuccessPopupOpen, selectSortedItems } from '../../store/selectors';
 import ReactPaginate from 'react-paginate';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Filters from '../filters/filters';
@@ -12,6 +11,8 @@ import PopupSuccess from '../popups/popup-success/popup-success';
 import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
 import { setPopupOpen } from '../../store/actions';
+import { selectSortedItems } from '../../store/catalog/selectors';
+import { getAddPopupOpen, getSuccessPopupOpen } from '../../store/modals/selectors';
 
 const CATALOG_BREADCRUMBS = Object.entries(Breadcrumb).slice(0, -1);
 const GUITARS_PER_PAGE = 9;
@@ -58,7 +59,6 @@ export default function CatalogMain() {
     setPageCount(Math.ceil(guitars.length / GUITARS_PER_PAGE));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[itemOffset, GUITARS_PER_PAGE]);
-
 
   return(
     <main className={styles.main}>

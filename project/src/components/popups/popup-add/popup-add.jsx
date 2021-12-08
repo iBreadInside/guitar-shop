@@ -1,9 +1,9 @@
 import styles from './popup-add.module.scss';
 import Stats from '../stats/stats';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentItem } from '../../../store/selectors';
 import { addCartItem, setPopupOpen } from '../../../store/actions';
 import { PopupType } from '../../../const';
+import { getCurrentItem } from '../../../store/cart/selectors';
 
 export default function PopupAdd() {
   const currentItem = useSelector(getCurrentItem);

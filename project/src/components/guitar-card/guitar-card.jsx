@@ -3,6 +3,7 @@ import { Rating } from 'react-simple-star-rating';
 import { setCurrentItem, setPopupOpen } from '../../store/actions';
 import { useDispatch } from 'react-redux';
 import { PopupType } from '../../const';
+import guitarCardProp from './guitar-card.prop';
 
 const RATING = 3.5;
 
@@ -87,3 +88,7 @@ export default function GuitarCard({guitar}) {
     </li>
   );
 }
+
+GuitarCard.propTypes = {
+  guitar: guitarCardProp,
+};

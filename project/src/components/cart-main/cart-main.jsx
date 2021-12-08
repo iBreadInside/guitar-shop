@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, MAX_SALE, PopupType, PromoCode, PromoCodesMap } from '../../const';
 import { addCartItem, deleteCartItem, setCurrentItem, setPopupOpen } from '../../store/actions';
-import { getCartItems, getDeletePopupOpen } from '../../store/selectors';
+import { getCartItems } from '../../store/cart/selectors';
+import { getDeletePopupOpen } from '../../store/modals/selectors';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Modal from '../modal/modal';
 import PopupDelete from '../popups/popup-delete/popup-delete';
@@ -83,6 +84,12 @@ export default function CartMain() {
       : setIsCodeValid(false);
   };
 
+  const handlePromoKeyDown = (evt) => {
+    if (evt.code === 'Enter') {
+      handlePromoClick();
+    };
+  };
+
   const handlePromoFocus = () => {
     setIsCodeValid(NO_PROMOCODE);
   };
@@ -136,7 +143,9 @@ export default function CartMain() {
                   onClick={() => handleAmountDecrease(guitar)}
                   aria-label='Убрать одну'
                 >
-                  -
+                  <svg width='8' height='1' viewBox='0 0 8 1' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <line x1='8' y1='0.5' y2='0.5' stroke='#9F9E9E'/>
+                  </svg>
                 </button>
                 <label
                   htmlFor='amount'
@@ -155,7 +164,10 @@ export default function CartMain() {
                   onClick={() => handleAmountIncrease(guitar)}
                   aria-label='Добавить одну'
                 >
-                  +
+                  <svg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <line x1='8' y1='4.11816' y2='4.11816' stroke='#9F9E9E'/>
+                    <line x1='3.8457' y1='8' x2='3.8457' stroke='#9F9E9E'/>
+                  </svg>
                 </button>
               </div>
               <p className={`${styles.price} ${styles.price_total}`}>{`${getItemSum(guitar)} ₽`}</p>
@@ -177,13 +189,11 @@ export default function CartMain() {
                 <input
                   id='promo'
                   type='text'
-                  className={`
-                    ${styles.promo}
-                    ${!isCodeValid ? styles.promo_invalid : ''}
-                  `}
+                  className={`${styles.promo} ${!isCodeValid ? styles.promo_invalid : ''}`}
                   maxLength={MAX_PROMOCODE_LENGTH}
                   onChange={handlePromoChange}
                   onFocus={handlePromoFocus}
+                  onKeyDown={handlePromoKeyDown}
                   autoComplete='off'
                 />
                 <label className='visually-hidden' htmlFor='promo'>Промокод</label>

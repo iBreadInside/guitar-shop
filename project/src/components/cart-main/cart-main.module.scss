@@ -110,26 +110,6 @@
     min-width: 220px;
     background-color: $btn--orange;
   }
-
-  // &_add,
-  // &_remove {
-  //   width: 28px;
-  //   height: 30px;
-  //   margin: 0;
-  //   padding: 0;
-  //   border: 1px solid $border--grey;
-  //   line-height: normal;
-  //   color: black;
-  //   background-color: white;
-  // }
-
-  // &_add {
-  //   border-left: none;
-  // }
-
-  // &_remove {
-  //   border-right: none;
-  // }
 }
 
 .total {
@@ -157,6 +137,7 @@
   border: none;
   align-self: flex-start;
   padding: 1px;
+  width: fit-content;
 }
 
 .info {
@@ -210,6 +191,13 @@
   width: 28px;
   height: 30px;
   text-align: center;
+  -moz-appearance:textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 .button {
@@ -229,5 +217,6 @@
 
   &_remove {
     border-right: none;
+    padding-bottom: 10px;
   }
 }

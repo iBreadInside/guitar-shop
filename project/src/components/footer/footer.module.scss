@@ -58,6 +58,7 @@
 
 .info__block {
   display: flex;
+  flex-wrap: wrap;
   padding-top: 4px;
   min-width: 470px;
 }

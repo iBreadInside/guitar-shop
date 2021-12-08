@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilters, getGuitars } from '../../store/selectors';
 import { setFilterValue } from '../../store/actions';
 import { getMaxPrice, getMinPrice } from '../../utils';
 import { FilterType, guitarMap, GuitarType, numberKeys, stringsMap } from '../../const';
 import styles from './filters.module.scss';
+import { getFilters, getGuitars } from '../../store/catalog/selectors';
 
 export default function Filters() {
   const dispatch = useDispatch();

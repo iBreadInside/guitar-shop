@@ -1,4 +1,5 @@
 import styles from './modal.module.scss';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 
 export default function Modal({modalState, onAfterOpen, onRequestClose, ...props}) {
@@ -25,3 +26,9 @@ export default function Modal({modalState, onAfterOpen, onRequestClose, ...props
     </ReactModal>
   );
 }
+
+Modal.propTypes = {
+  modalState: PropTypes.bool.isRequired,
+  onAfterOpen: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
+};

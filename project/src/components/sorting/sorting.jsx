@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { SortDirection, SortType, SortTypes } from '../../const';
 import { setSortDirection, setSortType } from '../../store/actions';
-import { getSortDirection, getSortType } from '../../store/selectors';
+import { getSortDirection, getSortType } from '../../store/catalog/selectors';
 import styles from './sorting.module.scss';
 
 export default function Sorting() {
@@ -63,6 +63,7 @@ export default function Sorting() {
                   name='dir'
                   value={dir}
                   onChange={() => handleDirectionChange(dir)}
+                  checked={sortDirection === dir}
               />
                 <label
                   className={`${styles.label} ${styles.label_dir}`}

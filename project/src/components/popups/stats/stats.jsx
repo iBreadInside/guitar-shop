@@ -1,5 +1,6 @@
 import styles from './stats.module.scss';
 import { capitalize } from '../../../utils';
+import guitarCardProp from '../../guitar-card/guitar-card.prop';
 
 export default function Stats ({guitar}) {
   const {
@@ -19,3 +20,7 @@ export default function Stats ({guitar}) {
     </section>
   );
 }
+
+Stats.propTypes = {
+  guitar: guitarCardProp,
+};

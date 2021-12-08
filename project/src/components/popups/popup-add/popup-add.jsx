@@ -1,23 +1,19 @@
 import styles from './popup-add.module.scss';
-import guitars from '../../../mocks/guitars';
-// import {useDispatch, useSelector} from 'react-redux';
-// import {getCurrentItem} from '../../../store/selectors';
-// import {addCartItem, setPopupOpen} from '../../../store/action';
 import Stats from '../stats/stats';
-// import {PopupType} from '../../../const';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentItem } from '../../../store/selectors';
+import { addCartItem, setPopupOpen } from '../../../store/actions';
+import { PopupType } from '../../../const';
 
 export default function PopupAdd() {
-  // const currentItem = useSelector(getCurrentItem)
-  // const dispatch = useDispatch();
+  const currentItem = useSelector(getCurrentItem);
+  const dispatch = useDispatch();
 
-  // const _handleAddClick = () => {
-  //   dispatch(addCartItem(currentItem));
-  //   dispatch(setPopupOpen(PopupType.ADD, false));
-  //   dispatch(setPopupOpen(PopupType.SUCCESS, true));
-  // }
-
-  const currentItem = guitars[0];
-  console.log(currentItem);
+  const handleAddClick = () => {
+    dispatch(addCartItem(currentItem));
+    dispatch(setPopupOpen(PopupType.ADD, false));
+    dispatch(setPopupOpen(PopupType.SUCCESS, true));
+  };
 
   return (
     <section className={styles.popup}>
@@ -30,7 +26,7 @@ export default function PopupAdd() {
         <Stats guitar={currentItem} />
         <button
           className={styles.btn}
-          // onClick={_handleAddClick}
+          onClick={handleAddClick}
         >
           Добавить в корзину
         </button>

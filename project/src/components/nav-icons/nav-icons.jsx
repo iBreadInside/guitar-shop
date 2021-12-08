@@ -1,6 +1,8 @@
 import styles from './nav-icons.module.scss';
 import { NavLink } from 'react-router-dom';
 import { AppRoute } from '../../const';
+import { useSelector } from 'react-redux';
+import { getCartItems } from '../../store/selectors';
 
 const LinkName = {
   MAP: 'Карта',
@@ -9,6 +11,9 @@ const LinkName = {
 };
 
 export default function NavIcons() {
+  const items = useSelector(getCartItems);
+  const goodsAmount = items.reduce((a, b) => (a + b.amount), 0);
+
   return(
     <>
       <svg className='sprite'>
@@ -53,7 +58,8 @@ export default function NavIcons() {
               <use xlinkHref={`#${LinkName.CART}`} />
             </svg>
           </NavLink>
-          <output className={styles.output}>2</output>
+          {goodsAmount > 0 && <output className={styles.output}>{goodsAmount}</output>}
+
         </li>
       </ul>
     </>

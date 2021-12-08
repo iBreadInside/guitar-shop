@@ -37,10 +37,6 @@
   border-radius: 4px;
 }
 
-.open {
-  overflow: hidden;
-}
-
 .close {
   @include interactive;
   position: absolute;

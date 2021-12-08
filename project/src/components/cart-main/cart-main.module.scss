@@ -11,3 +11,223 @@
   margin-top: 39px;
   margin-bottom: 20px;
 }
+
+// List
+.list {
+  @include list-style-none;
+  border-top: 0.7px solid $border--lightgrey;
+  margin-top: 28px;
+  margin-bottom: 43px;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo__block,
+.sum {
+  flex-grow: 1;
+  max-width: 45%;
+  height: 95px;
+}
+
+.sum {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.text {
+  margin: 0;
+  margin-bottom: 9px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+}
+
+.hint {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: .05em;
+}
+
+.field {
+  position: relative;
+  display: flex;
+}
+
+.promo {
+  position: relative;
+  width: 170px;
+  height: 36px;
+  padding: 10px;
+  border: 2px solid $border--lightgrey;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-right: 33px;
+
+  &_invalid {
+    border-color: red;
+  }
+
+  &_invalid_text {
+    position: absolute;
+    bottom: 34px;
+    font-size: 12px;
+    color: red;
+  }
+}
+
+.invalid__text {
+  position: absolute;
+  bottom: 34px;
+  font-size: 12px;
+  color: red;
+}
+
+.btn {
+  @include interactive;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  padding: 10px 27px 10px 22px;
+  color: white;
+  background-color: $btn--silver;
+  border: none;
+
+  &_order {
+    text-align: center;
+    text-decoration: none;
+    min-width: 220px;
+    background-color: $btn--orange;
+  }
+
+  // &_add,
+  // &_remove {
+  //   width: 28px;
+  //   height: 30px;
+  //   margin: 0;
+  //   padding: 0;
+  //   border: 1px solid $border--grey;
+  //   line-height: normal;
+  //   color: black;
+  //   background-color: white;
+  // }
+
+  // &_add {
+  //   border-left: none;
+  // }
+
+  // &_remove {
+  //   border-right: none;
+  // }
+}
+
+.total {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: .05em;
+}
+
+// Card
+.card {
+  display: grid;
+  grid-template-columns: 4.8% 12% auto 20% repeat(2, 15%);
+  padding: 20px 0 13px;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 0.7px solid $border--lightgrey;
+  }
+}
+
+.delete {
+  @include interactive;
+  background-color: transparent;
+  border: none;
+  align-self: flex-start;
+  padding: 1px;
+}
+
+.info {
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.name,
+.code,
+.details {
+  margin: 0;
+  letter-spacing: .05em;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  margin-bottom: 12px;
+}
+
+.code {
+  line-height: 15px;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  text-align: center;
+
+  &_total {
+    justify-self: flex-end;
+  }
+}
+
+.amount__block {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.amount {
+  display: block;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: .05em;
+  color: $border--grey;
+  border: 1px solid $border--grey;
+  width: 28px;
+  height: 30px;
+  text-align: center;
+}
+
+.button {
+  @include interactive;
+  width: 28px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $border--grey;
+  line-height: normal;
+  color: $border--grey;
+  background-color: white;
+
+  &_add {
+    border-left: none;
+  }
+
+  &_remove {
+    border-right: none;
+  }
+}

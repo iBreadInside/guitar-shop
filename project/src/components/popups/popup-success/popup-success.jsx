@@ -1,16 +1,15 @@
 import styles from './popup-success.module.scss';
-import  {NavLink } from 'react-router-dom';
-// import {useDispatch} from 'react-redux';
-// import {setPopupOpen} from '../../../store/action';
+import { NavLink } from 'react-router-dom';
 import { AppRoute, PopupType } from '../../../const';
+import { useDispatch } from 'react-redux';
+import { setPopupOpen } from '../../../store/actions';
 
 export default function PopupSuccess() {
+  const dispatch = useDispatch();
 
-  // const dispatch = useDispatch();
-
-  // const _handleCloseClick = () => {
-  //   dispatch(setPopupOpen(PopupType.SUCCESS, false));
-  // };
+  const handleCloseClick = () => {
+    dispatch(setPopupOpen(PopupType.SUCCESS, false));
+  };
 
   return (
     <section className={styles.popup}>
@@ -19,13 +18,13 @@ export default function PopupSuccess() {
         <NavLink
           className={styles.btn}
           to={AppRoute.CART}
-          // onClick={_handleCloseClick}
+          onClick={handleCloseClick}
         >
             Перейти в корзину
         </NavLink>
         <button
           className={styles.close}
-          // onClick={_handleCloseClick}
+          onClick={handleCloseClick}
         >
           Продолжить покупки
         </button>

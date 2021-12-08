@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Breadcrumb } from '../../const';
+import { Breadcrumb, PopupType } from '../../const';
 import { getAddPopupOpen, getSuccessPopupOpen, selectSortedItems } from '../../store/selectors';
 import ReactPaginate from 'react-paginate';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
@@ -34,7 +34,12 @@ export default function CatalogMain() {
     setPageSelected(event.selected);
   };
 
-  const handlePopupClose = (type) => {
+  const handleModalAfterOpen = () => {
+    document.body.classList.add(styles.open);
+  };
+
+  const handleModalAfterClose = (type) => {
+    document.body.classList.remove(styles.open);
     dispatch(setPopupOpen(type, false));
   };
 
@@ -90,11 +95,19 @@ export default function CatalogMain() {
         </div>
       </section>
 
-      <Modal modalState={isAddPopupOpen}>
+      <Modal
+        modalState={isAddPopupOpen}
+        onAfterOpen={handleModalAfterOpen}
+        onRequestClose={() => handleModalAfterClose(PopupType.ADD)}
+      >
         <PopupAdd />
       </Modal>
 
-      <Modal modalState={isSuccessPopupOpen}>
+      <Modal
+        modalState={isSuccessPopupOpen}
+        onAfterOpen={handleModalAfterOpen}
+        onRequestClose={() => handleModalAfterClose(PopupType.SUCCESS)}
+      >
         <PopupSuccess />
       </Modal>
 

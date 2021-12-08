@@ -1,32 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
 
-// export const ActionType = {
-//   GET_GUITARS: 'catalog/getGuitars',
-//   SET_PAGINATION: 'catalog/setPagination',
-//   GET_CURRENT_LIST: 'catalog/getCurrentList',
-// };
-
-// export const getGuitars = createAction(
-//   ActionType.GET_GUITARS,
-//   guitars => ({
-//     payload: guitars,
-//   }),
-// );
-
-// export const setPagination = createAction(
-//   ActionType.SET_PAGINATION,
-//   page => ({
-//     payload: page,
-//   }),
-// );
-
-// export const getCurrentList = createAction(
-//   ActionType.GET_CURRENT_LIST,
-//   list => ({
-//     payload: list,
-//   }),
-// );
-
 export const ActionType = {
   SET_FILTER_VALUE: `data/setFilterValue`,
   SET_SORT_TYPE: `data/setSortType`,

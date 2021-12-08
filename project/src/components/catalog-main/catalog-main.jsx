@@ -38,10 +38,6 @@ export default function CatalogMain() {
     dispatch(setPopupOpen(type, false));
   };
 
-  // useEffect(() => {
-  //   catalogRef.current.querySelectorAll('.page__link ').forEach(item => item.href = "#");
-  // });
-
   useEffect(() => {
     setItemOffset(0);
     const endOffset = itemOffset + GUITARS_PER_PAGE;

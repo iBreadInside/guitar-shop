@@ -10,21 +10,13 @@ export default function Sorting() {
   const sortDirection = useSelector(getSortDirection);
 
   const handleSortChange = (type) => {
-    if (sortType === type){
-      return;
-    } else {
-      dispatch(setSortType(type));
-      sortDirection === SortDirection.DEFAULT && dispatch(setSortDirection(SortDirection.INC));
-    }
+    dispatch(setSortType(type));
+    sortDirection === SortDirection.DEFAULT && dispatch(setSortDirection(SortDirection.INC));
   };
 
   const handleDirectionChange = (direction) => {
-    if (sortDirection === direction) {
-      return;
-    } else {
-      dispatch(setSortDirection(direction));
-      sortType === SortType.DEFAULT && dispatch(setSortType(SortType.BY_PRICE));
-    }
+    dispatch(setSortDirection(direction));
+    sortType === SortType.DEFAULT && dispatch(setSortType(SortType.BY_PRICE));
   };
 
   return(
@@ -70,7 +62,7 @@ export default function Sorting() {
                   id={dir}
                   name='dir'
                   value={dir}
-                  onChange={evt => handleDirectionChange(evt.target.value)}
+                  onChange={() => handleDirectionChange(dir)}
               />
                 <label
                   className={`${styles.label} ${styles.label_dir}`}

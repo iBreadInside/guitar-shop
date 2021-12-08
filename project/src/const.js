@@ -61,7 +61,7 @@ export const SortDirection = {
 
 export const sortMap = {
   [SortType.BY_PRICE]: 'price',
-  [SortType.BY_RATING]: 'rating',
+  [SortType.BY_RATING]: 'reviews',
 };
 
 export const StringAmount = {

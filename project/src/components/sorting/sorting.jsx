@@ -1,21 +1,30 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { SortDirection, SortType, SortTypes } from '../../const';
+import { setSortDirection, setSortType } from '../../store/actions';
+import { getSortDirection, getSortType } from '../../store/selectors';
 import styles from './sorting.module.scss';
 
-const SortingMethod = {
-  COST: 'по цене',
-  REVIEWS: 'по популярности',
-};
-
-const SortingDirection = {
-  UP: 'вверх',
-  DOWN: 'вниз',
-};
-
 export default function Sorting() {
-  const [direction, setDirection] = useState(SortingDirection.UP);
+  const dispatch = useDispatch();
+  const sortType = useSelector(getSortType);
+  const sortDirection = useSelector(getSortDirection);
 
-  const handleDirectionChange = (value) => {
-    setDirection(value);
+  const handleSortChange = (type) => {
+    if (sortType === type){
+      return;
+    } else {
+      dispatch(setSortType(type));
+      sortDirection === SortDirection.DEFAULT && dispatch(setSortDirection(SortDirection.INC));
+    }
+  };
+
+  const handleDirectionChange = (direction) => {
+    if (sortDirection === direction) {
+      return;
+    } else {
+      dispatch(setSortDirection(direction));
+      sortType === SortType.DEFAULT && dispatch(setSortType(SortType.BY_PRICE));
+    }
   };
 
   return(
@@ -24,24 +33,25 @@ export default function Sorting() {
       <div className={styles.options}>
         <ul className={`${styles.list} ${styles.list_method}`}>
           {
-            Object.values(SortingMethod).map(method => (
+            SortTypes.map(({id, type, text}) => (
               <li
-                key={method}
+                key={id}
                 className={styles.item}
               >
                 <input
                   className={`visually-hidden ${styles.method}`}
                   type='radio'
-                  id={method}
+                  id={id}
                   name='method'
-                  value={method}
+                  value={type}
+                  onChange={() => handleSortChange(type)}
               />
-              <label
-                className={styles.label}
-                htmlFor={method}
-              >
-                {method}
-              </label>
+                <label
+                  className={styles.label}
+                  htmlFor={id}
+                >
+                  {text}
+                </label>
               </li>
             ))
           }
@@ -49,7 +59,7 @@ export default function Sorting() {
 
         <ul className={`${styles.list} ${styles.list_direction}`}>
           {
-            Object.values(SortingDirection).map((dir) => (
+            Object.values(SortDirection).slice(1).map((dir) => (
               <li
                 key={dir}
                 className={`${styles.item} ${styles.item_dir}`}
@@ -61,13 +71,12 @@ export default function Sorting() {
                   name='dir'
                   value={dir}
                   onChange={evt => handleDirectionChange(evt.target.value)}
-                  defaultChecked={direction === dir}
               />
-              <label
-                className={`${styles.label} ${styles.label_dir}`}
-                htmlFor={dir}
-                aria-label={dir}
-              />
+                <label
+                  className={`${styles.label} ${styles.label_dir}`}
+                  htmlFor={dir}
+                  aria-label={dir}
+                />
               </li>
             ))
           }

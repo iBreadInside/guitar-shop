@@ -1,40 +1,104 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from '../../const';
-import guitars from '../../mocks/guitars';
+import { getAddPopupOpen, getSuccessPopupOpen, selectSortedItems } from '../../store/selectors';
+import ReactPaginate from 'react-paginate';
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
-import Filter from '../filter/filter';
+import Filters from '../filters/filters';
 import GuitarList from '../guitar-list/guitar-list';
-import GuitarPagination from '../guitar-pagination/guitar-pagination';
 import Modal from '../modal/modal';
 import PopupAdd from '../popups/popup-add/popup-add';
 import PopupSuccess from '../popups/popup-success/popup-success';
 import Sorting from '../sorting/sorting';
 import styles from './catalog-main.module.scss';
+import { setPopupOpen } from '../../store/actions';
 
 const CATALOG_BREADCRUMBS = Object.entries(Breadcrumb).slice(0, -1);
+const GUITARS_PER_PAGE = 9;
 
 export default function CatalogMain() {
-  const [isModalShown, setIsModalShown] = useState(false);
-  const [isModalSuccess, setIsModalSuccess] = useState(false);
+  const dispatch = useDispatch();
+  const guitars = useSelector(selectSortedItems);
+  const paginationPagesCount = Math.ceil(guitars.length / GUITARS_PER_PAGE);
+  const isAddPopupOpen = useSelector(getAddPopupOpen);
+  const isSuccessPopupOpen = useSelector(getSuccessPopupOpen);
+
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [pageSelected, setPageSelected] = useState(0);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * GUITARS_PER_PAGE) % guitars.length;
+    setItemOffset(newOffset);
+    setPageSelected(event.selected);
+  };
+
+  const handlePopupClose = (type) => {
+    dispatch(setPopupOpen(type, false));
+  };
+
+  // useEffect(() => {
+  //   catalogRef.current.querySelectorAll('.page__link ').forEach(item => item.href = "#");
+  // });
+
+  useEffect(() => {
+    setItemOffset(0);
+    const endOffset = itemOffset + GUITARS_PER_PAGE;
+    setCurrentItems(guitars.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(guitars.length / GUITARS_PER_PAGE));
+    setPageSelected(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [guitars]);
+
+  useEffect(() => {
+    const endOffset = itemOffset + GUITARS_PER_PAGE;
+    setCurrentItems(guitars.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(guitars.length / GUITARS_PER_PAGE));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[itemOffset, GUITARS_PER_PAGE]);
+
 
   return(
     <main className={styles.main}>
       <h1 className={styles.title}>Каталог гитар</h1>
       <Breadcrumbs list={CATALOG_BREADCRUMBS} />
       <section className={styles.catalog}>
-        <Filter />
+        <Filters />
         <div>
           <Sorting />
-          <GuitarList list={guitars} />
-          <GuitarPagination totalPages={7} />
+          <GuitarList list={currentItems} />
+          {
+            paginationPagesCount > 1 &&
+              <ReactPaginate
+                pageCount={pageCount}
+                pageRangeDisplayed={pageSelected === pageCount - 1 ? 2 : 1}
+                marginPagesDisplayed={1}
+                previousLabel='Назад'
+                breakLabel='...'
+                nextLabel='Далее'
+                forcePage={pageSelected}
+                containerClassName={styles.container}
+                breakClassName={styles.break}
+                breakLinkClassName='visually-hidden'
+                pageClassName={styles.item}
+                pageLinkClassName={styles.page__link}
+                activeLinkClassName={styles.page__link_active}
+                previousLinkClassName={`${styles.page__link} ${styles.page__link_prev}`}
+                nextLinkClassName={`${styles.page__link} ${styles.page__link_next}`}
+                disabledClassName='visually-hidden'
+                renderOnZeroPageCount={null}
+                onPageChange={handlePageClick}
+              />
+          }
         </div>
       </section>
 
-      <Modal modalState={isModalShown}>
+      <Modal modalState={isAddPopupOpen}>
         <PopupAdd />
       </Modal>
 
-      <Modal modalState={isModalSuccess}>
+      <Modal modalState={isSuccessPopupOpen}>
         <PopupSuccess />
       </Modal>
 

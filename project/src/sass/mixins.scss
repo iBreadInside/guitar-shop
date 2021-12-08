@@ -23,7 +23,7 @@
 }
 
 @mixin input-border {
-  border: 0.7px solid $border--grey;
+  border: .7px solid $border--grey;
   border-radius: 2px;
 }
 
@@ -88,7 +88,7 @@
 @mixin footer-title {
   font-size: $font-size--default;
   line-height: 44px;
-  opacity: 0.7;
+  opacity: .7;
   margin: 0;
 }
 
@@ -110,32 +110,7 @@
   }
 
   &:disabled {
-    opacity: .6;
+    opacity: 1;
     cursor: default;
   }
 }
-
-// @mixin inputRange {
-//   -webkit-appearance: none;
-//   width: 100%;
-//   margin-top: 22px;
-//   height: 1px;
-//   background: $grey--line;
-//   border-radius: 5px;
-//   cursor: pointer;
-// }
-
-// @mixin rangeThumb {
-//   -webkit-appearance: none;
-//   height: 14px;
-//   width: 14px;
-//   border-radius: 50%;
-//   background: $han-purple;
-// }
-
-// @mixin rangeTrack {
-//   -webkit-appearance: none;
-//   box-shadow: none;
-//   border: none;
-//   background: transparent;
-// }

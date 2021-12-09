@@ -40,7 +40,7 @@ export const SortType = {
   BY_RATING: 'byRating',
 };
 
-export const SortTypes = [
+export const sortTypes = [
   {
     id: 1,
     type: SortType.BY_PRICE,

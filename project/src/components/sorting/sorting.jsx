@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { SortDirection, SortType, SortTypes } from '../../const';
+import { SortDirection, SortType, sortTypes } from '../../const';
 import { setSortDirection, setSortType } from '../../store/actions';
 import { getSortDirection, getSortType } from '../../store/catalog/selectors';
 import styles from './sorting.module.scss';
@@ -25,7 +25,7 @@ export default function Sorting() {
       <div className={styles.options}>
         <ul className={`${styles.list} ${styles.list_method}`}>
           {
-            SortTypes.map(({id, type, text}) => (
+            sortTypes.map(({id, type, text}) => (
               <li
                 key={id}
                 className={styles.item}

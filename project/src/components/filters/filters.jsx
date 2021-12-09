@@ -110,18 +110,28 @@ export default function Filters() {
     const stringsChecked = filters.strings.filter((item) => item.value === true);
     stringsChecked.forEach((string) => {
       if (!enableStrings.includes(parseInt(string.name))) {
-        (typesChecked.length > 0) ?
-          dispatch(setFilterValue(FilterType.STRINGS, string.name, false)) :
-          setEnableStrings(stringsMap[GuitarType.ALL]);
+        (typesChecked.length > 0)
+          ? dispatch(setFilterValue(FilterType.STRINGS, string.name, false))
+          : setEnableStrings(stringsMap[GuitarType.ALL]);
       };
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enableStrings]);
 
+
   useEffect(() => {
     setEnableStrings(getEnabledStrings());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters.types]);
+
+  useEffect(() => {
+    const currentPriceLimits = filters.price.filter((item) => item.value !== null);
+
+    if (currentPriceLimits.length !== 0) {
+      setMinPrice(currentPriceLimits[0].value);
+      setMaxPrice(currentPriceLimits[1].value);
+    };
+  }, [filters.price]);
 
   return (
     <form>

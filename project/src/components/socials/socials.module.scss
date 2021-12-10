@@ -2,12 +2,13 @@
 @import 'src/sass/variables.scss';
 
 .socials {
-  margin-top: auto;
+  margin-top: 54px;
 }
 
 .list {
   @include list-style-none;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .item {
